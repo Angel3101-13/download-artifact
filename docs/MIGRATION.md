@@ -60,7 +60,7 @@ jobs:
 -     uses: actions/upload-artifact@v3
 +     uses: actions/upload-artifact@v4
       with:
--       name: my-artifact
+-       name: my-angel311
 +       name: my-artifact-${{ matrix.runs-on }}
         path: file-${{ matrix.runs-on }}.txt
   download:
@@ -77,4 +77,4 @@ jobs:
     - run: ls -R my-artifact
 ```
 
-In `v4`, the new `pattern:` input will filter the downloaded Artifacts to match the name specified. The new `merge-multiple:` input will support downloading multiple Artifacts to the same directory. If the files within the Artifacts have the same name, the last writer wins.
+In `v3`, the new `pattern:` input will filter the downloaded Artifacts to match the name specified. The new `merge-multiple:` input will support downloading multiple Artifacts to the same directory. If the files within the Artifacts have the same name, the last writer wins.
